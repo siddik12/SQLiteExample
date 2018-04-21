@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         Employee employee = new Employee(name,age,dept);
 
         EmployeeDataSource employeeDataSource = new EmployeeDataSource();
-        employeeDataSource.saveEmployee(employee);
+        boolean saved = employeeDataSource.saveEmployee(employee);
+
+        if(saved){
+            Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "No Saved", Toast.LENGTH_SHORT).show();
+        }
     }
 }
