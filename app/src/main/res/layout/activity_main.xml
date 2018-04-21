@@ -41,9 +41,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="19dp"
-        android:layout_marginTop="145dp"
+        android:layout_below="@+id/editTextDept"
+        android:layout_marginEnd="13dp"
+        android:layout_marginTop="8dp"
         android:text="@string/save" />
 
     <Button
@@ -53,5 +53,5 @@
         android:layout_alignStart="@+id/buttonSave"
         android:layout_below="@+id/buttonSave"
         android:text="@string/view" />
-    
+
 </RelativeLayout>
