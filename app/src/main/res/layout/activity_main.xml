@@ -51,6 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/buttonSave"
         android:layout_below="@+id/buttonSave"
+        android:onClick="showEmployeeData"
         android:text="@string/view" />
 
 </RelativeLayout>

@@ -9,11 +9,12 @@ public class EmployeeDatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "employeeDB";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String EMPLOYEE_TABLE_NAME = "employee";
-    private static final String EMPLOYEE_COL_ID = "_id";
-    private static final String EMPLOYEE_COL_NAME = "name";
-    private static final String EMPLOYEE_COL_AGE = "age";
-    private static final String EMPLOYEE_COL_DEPT = "dept";
+    public static final String EMPLOYEE_TABLE_NAME = "tbl_employee";
+    public static final String EMPLOYEE_COL_ID = "_id";
+    public static final String EMPLOYEE_COL_NAME = "name";
+    public static final String EMPLOYEE_COL_AGE = "age";
+    public static final String EMPLOYEE_COL_DEPT = "dept";
+    public static final String [] EMPLOYEE_COLUMNS = {EMPLOYEE_COL_NAME,EMPLOYEE_COL_AGE,EMPLOYEE_COL_DEPT};
 
     private static final String CREATE_TABLE_EMPLOYEE = "CREATE TABLE "+ EMPLOYEE_TABLE_NAME + "(" +
             EMPLOYEE_COL_ID + " INTEGER PRIMARY KEY, " +
@@ -22,7 +23,7 @@ public class EmployeeDatabaseHelper extends SQLiteOpenHelper {
             EMPLOYEE_COL_DEPT + " TEXT )";
 
 
-    public EmployeeDatabaseHelper(Context context) {
+    EmployeeDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -33,7 +34,7 @@ public class EmployeeDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + EMPLOYEE_TABLE_NAME );
-        onCreate(db);
+       /* db.execSQL("DROP TABLE IF EXISTS " + EMPLOYEE_TABLE_NAME );
+        onCreate(db);*/
     }
 }
